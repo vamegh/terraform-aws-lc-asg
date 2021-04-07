@@ -7,12 +7,10 @@ resource "aws_launch_configuration" "main" {
 
   iam_instance_profile = var.ami_iam_profile_id
 
-  # key_name = "${var.key_name}"
   security_groups = flatten(var.security_group_ids)
 
   associate_public_ip_address = var.associate_public_ip
 
-  # user_data = "${var.user_data}"
   user_data_base64 = var.user_data_base64
 }
 
@@ -25,12 +23,10 @@ resource "aws_launch_configuration" "main_spot" {
 
   iam_instance_profile = var.ami_iam_profile_id
 
-  # key_name = "${var.key_name}"
   security_groups = flatten(var.security_group_ids)
 
   associate_public_ip_address = var.associate_public_ip
 
-  # user_data = "${var.user_data}"
   user_data_base64 = var.user_data_base64
 }
 
